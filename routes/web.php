@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\http\Controllers\UserController;
+use App\http\Controllers\ReportController;
+use App\http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,10 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Home');
 });
+
+
+Route::get('/user', [UserController::class, 'index']);
+
+Route::get('/login', [LoginController::class, 'index']);
+
+
